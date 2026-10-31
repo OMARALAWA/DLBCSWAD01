@@ -1,1 +1,363 @@
 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Additional fictional product information for AeroCharge One."
+  >
+
+  <title>AeroCharge One | Product Details</title>
+
+  <style>
+
+    :root {
+      --background: #f3f7f4;
+      --surface: #ffffff;
+      --primary: #174a36;
+      --primary-light: #236b4f;
+      --text: #18231d;
+      --muted: #607067;
+      --border: #d6e1d9;
+      --accent: #e5b444;
+      --max-width: 980px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+
+      color: var(--text);
+      background:
+        radial-gradient(
+          circle at 90% 0,
+          rgba(229, 180, 68, 0.18),
+          transparent 30%
+        ),
+        var(--background);
+
+      font-family:
+        Inter,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+      line-height: 1.65;
+    }
+
+    a:focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 5px;
+      border-radius: 7px;
+    }
+
+    .container {
+      width: min(92%, var(--max-width));
+      margin-inline: auto;
+    }
+
+    header {
+      padding: 5rem 0 4rem;
+
+      color: #ffffff;
+
+      background:
+        linear-gradient(
+          135deg,
+          #102f23,
+          #1e6348
+        );
+    }
+
+    .back-link {
+      display: inline-block;
+
+      margin-bottom: 2rem;
+
+      color: #ffffff;
+
+      font-weight: 750;
+
+      text-decoration: none;
+    }
+
+    h1 {
+      max-width: 700px;
+
+      margin: 0;
+
+      font-size:
+        clamp(2.7rem, 7vw, 5rem);
+
+      line-height: 1;
+
+      letter-spacing: -0.05em;
+    }
+
+    .lead {
+      max-width: 700px;
+
+      margin: 1.4rem 0 0;
+
+      color: #e7f1ea;
+
+      font-size: 1.08rem;
+    }
+
+    main {
+      padding: 4rem 0;
+    }
+
+    h2 {
+      margin-top: 0;
+
+      font-size: 1.55rem;
+    }
+
+    .grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+      gap: 1rem;
+    }
+
+    .card {
+      padding: 1.5rem;
+
+      background: var(--surface);
+
+      border:
+        1px solid var(--border);
+
+      border-radius: 20px;
+
+      box-shadow:
+        0 12px 30px rgba(24, 68, 48, 0.06);
+    }
+
+    .specifications {
+      margin: 0;
+      padding: 0;
+
+      list-style: none;
+    }
+
+    .specifications li {
+      display: flex;
+      justify-content: space-between;
+
+      gap: 2rem;
+
+      padding: 0.8rem 0;
+
+      border-bottom:
+        1px solid var(--border);
+    }
+
+    .specifications li:last-child {
+      border-bottom: 0;
+    }
+
+    .label {
+      font-weight: 800;
+    }
+
+    .note {
+      margin-top: 2rem;
+
+      padding: 1.4rem;
+
+      color: #ffffff;
+
+      background: var(--primary);
+
+      border-radius: 20px;
+    }
+
+    footer {
+      padding: 2rem;
+
+      color: var(--muted);
+
+      text-align: center;
+    }
+
+    @media (max-width: 680px) {
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .specifications li {
+        flex-direction: column;
+        gap: 0.2rem;
+      }
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+<header>
+
+  <div class="container">
+
+    <a
+      class="back-link"
+      href="index.html"
+    >
+      ← Back to AeroCharge One
+    </a>
+
+    <h1>
+      Product information
+    </h1>
+
+    <p class="lead">
+
+      Additional specifications and fictional usage information
+      for the AeroCharge One portable solar-assisted power bank.
+
+    </p>
+
+  </div>
+
+</header>
+
+
+<main class="container">
+
+  <div class="grid">
+
+    <section class="card">
+
+      <h2>
+        Technical specifications
+      </h2>
+
+      <ul class="specifications">
+
+        <li>
+          <span class="label">
+            Capacity
+          </span>
+          <span>
+            20,000 mAh
+          </span>
+        </li>
+
+        <li>
+          <span class="label">
+            Main charging input
+          </span>
+          <span>
+            USB-C
+          </span>
+        </li>
+
+        <li>
+          <span class="label">
+            Outputs
+          </span>
+          <span>
+            USB-C + USB-A
+          </span>
+        </li>
+
+        <li>
+          <span class="label">
+            Status indicator
+          </span>
+          <span>
+            Four-stage LED
+          </span>
+        </li>
+
+        <li>
+          <span class="label">
+            Housing
+          </span>
+          <span>
+            Impact-resistant polymer
+          </span>
+        </li>
+
+      </ul>
+
+    </section>
+
+
+    <section class="card">
+
+      <h2>
+        Intended use
+      </h2>
+
+      <p>
+
+        AeroCharge One is conceptually designed for students,
+        commuters, travellers and outdoor users who require
+        portable battery storage.
+
+      </p>
+
+      <p>
+
+        Its solar surface provides supplementary charging in
+        daylight conditions, while USB-C remains the primary
+        charging method for rapid and predictable recharging.
+
+      </p>
+
+    </section>
+
+  </div>
+
+
+  <section class="note">
+
+    <h2>
+      Educational disclaimer
+    </h2>
+
+    <p>
+
+      AeroCharge One is a fictional product created solely for
+      demonstrating semantic HTML structure as part of
+      DLBCSWAD01 – Web Application Development.
+
+    </p>
+
+  </section>
+
+</main>
+
+
+<footer>
+
+  IU DLBCSWAD01 · Static HTML implementation
+
+</footer>
+
+</body>
+
+</html>
