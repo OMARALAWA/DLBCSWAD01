@@ -1,1 +1,278 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="description"
+    content="DLBCSWAD01 Web Application Development implementation portfolio for Tasks 3 and 4."
+  >
+
+  <title>DLBCSWAD01 | Web Development Portfolio</title>
+
+  <style>
+    :root {
+      --bg: #07111f;
+      --surface: rgba(255, 255, 255, 0.08);
+      --surface-hover: rgba(255, 255, 255, 0.13);
+      --text: #f8fafc;
+      --muted: #b9c6d8;
+      --blue: #67a7ff;
+      --purple: #b68cff;
+      --border: rgba(255, 255, 255, 0.13);
+      --max-width: 1100px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family:
+        Inter, system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 15% 15%, rgba(44, 120, 255, 0.22), transparent 30%),
+        radial-gradient(circle at 90% 20%, rgba(154, 81, 255, 0.22), transparent 30%),
+        linear-gradient(135deg, #07111f 0%, #0b1730 55%, #11152c 100%);
+    }
+
+    a {
+      color: inherit;
+    }
+
+    a:focus-visible {
+      outline: 3px solid #fbbf24;
+      outline-offset: 5px;
+      border-radius: 8px;
+    }
+
+    .container {
+      width: min(92%, var(--max-width));
+      margin-inline: auto;
+    }
+
+    header {
+      padding: 1.3rem 0;
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(14px);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .brand {
+      margin: 0;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+    }
+
+    .course {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    main {
+      padding: 7rem 0;
+    }
+
+    .eyebrow {
+      margin: 0 0 1rem;
+      color: var(--blue);
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 850px;
+      margin: 0;
+      font-size: clamp(2.7rem, 8vw, 6rem);
+      line-height: 0.98;
+      letter-spacing: -0.055em;
+    }
+
+    .intro {
+      max-width: 720px;
+      margin: 1.8rem 0 3rem;
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.4rem;
+    }
+
+    .project {
+      position: relative;
+      overflow: hidden;
+      min-height: 300px;
+      padding: 2rem;
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      background: var(--surface);
+      backdrop-filter: blur(16px);
+      text-decoration: none;
+      transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        background 0.25s ease;
+    }
+
+    .project:hover {
+      transform: translateY(-6px);
+      border-color: rgba(255, 255, 255, 0.3);
+      background: var(--surface-hover);
+    }
+
+    .project-number {
+      color: var(--muted);
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .project h2 {
+      margin: 4.5rem 0 0.8rem;
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      line-height: 1.1;
+    }
+
+    .project p {
+      max-width: 440px;
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .arrow {
+      position: absolute;
+      right: 1.7rem;
+      top: 1.5rem;
+      font-size: 2rem;
+      transition: transform 0.25s ease;
+    }
+
+    .project:hover .arrow {
+      transform: translate(5px, -5px);
+    }
+
+    footer {
+      padding: 2rem 0;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 760px) {
+      main {
+        padding: 4.5rem 0;
+      }
+
+      .projects {
+        grid-template-columns: 1fr;
+      }
+
+      .project {
+        min-height: 260px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container">
+    <nav aria-label="Portfolio navigation">
+      <p class="brand">DLBCSWAD01</p>
+      <span class="course">Web Application Development</span>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+
+    <p class="eyebrow">Implementation Portfolio</p>
+
+    <h1>
+      Web interfaces built for responsive, accessible experiences.
+    </h1>
+
+    <p class="intro">
+      This portfolio contains the practical implementations developed
+      for Tasks 3 and 4 of DLBCSWAD01 – Web Application Development.
+      Select an implementation below to inspect the deployed website.
+    </p>
+
+    <section class="projects" aria-label="Course implementations">
+
+      <a class="project" href="task3/">
+        <span class="project-number">Task 03</span>
+        <span class="arrow" aria-hidden="true">↗</span>
+
+        <h2>Static Product Information Page</h2>
+
+        <p>
+          A semantic HTML5 product website featuring structured content,
+          accessible imagery, product features, pricing information,
+          availability and customer reviews.
+        </p>
+      </a>
+
+      <a class="project" href="task4/">
+        <span class="project-number">Task 04</span>
+        <span class="arrow" aria-hidden="true">↗</span>
+
+        <h2>Responsive Bootstrap Product Grid</h2>
+
+        <p>
+          A Bootstrap 5 responsive product catalogue demonstrating
+          one-, two- and three-column layouts across predefined
+          responsive breakpoints.
+        </p>
+      </a>
+
+    </section>
+
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <p>
+      DLBCSWAD01 – Web Application Development · IU International
+      University of Applied Sciences
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
