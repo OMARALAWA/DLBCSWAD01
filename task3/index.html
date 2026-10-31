@@ -1,1 +1,1064 @@
 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="AeroCharge One fictional solar-assisted portable power bank product page."
+  >
+
+  <!-- =========================================================
+       TITLE / HEADER
+       ========================================================= -->
+
+  <title>AeroCharge One | Portable Solar Power Bank</title>
+
+  <style>
+
+    :root {
+      --background: #f4f8f5;
+      --surface: #ffffff;
+      --surface-soft: #e8f1eb;
+
+      --primary: #174a36;
+      --primary-light: #236b4f;
+      --accent: #e5b444;
+
+      --text: #17231c;
+      --muted: #627067;
+
+      --border: #d8e1da;
+
+      --shadow:
+        0 24px 55px rgba(22, 65, 46, 0.13);
+
+      --radius: 24px;
+
+      --max-width: 1160px;
+    }
+
+
+    /* =========================================================
+       GLOBAL
+       ========================================================= */
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      overflow-x: hidden;
+
+      font-family:
+        Inter,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+      line-height: 1.65;
+
+      color: var(--text);
+      background: var(--background);
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: var(--primary-light);
+    }
+
+    a:focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 5px;
+      border-radius: 6px;
+    }
+
+    .container {
+      width: min(92%, var(--max-width));
+      margin-inline: auto;
+    }
+
+
+    /* =========================================================
+       ACCESSIBILITY
+       ========================================================= */
+
+    .skip-link {
+      position: absolute;
+      top: -100px;
+      left: 1rem;
+      z-index: 1000;
+
+      padding: 0.8rem 1rem;
+
+      color: #ffffff;
+      background: #000000;
+
+      text-decoration: none;
+      border-radius: 8px;
+    }
+
+    .skip-link:focus {
+      top: 1rem;
+    }
+
+
+    /* =========================================================
+       HEADER
+       ========================================================= */
+
+    header {
+      color: #ffffff;
+
+      background:
+        radial-gradient(
+          circle at 80% 10%,
+          rgba(229, 180, 68, 0.25),
+          transparent 27%
+        ),
+        linear-gradient(
+          135deg,
+          #102f23,
+          #1b6045
+        );
+    }
+
+    nav {
+      min-height: 76px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 1rem;
+    }
+
+    .brand {
+      margin: 0;
+
+      font-size: 1.2rem;
+      font-weight: 850;
+      letter-spacing: 0.025em;
+    }
+
+    .nav-link {
+      color: #ffffff;
+
+      font-size: 0.92rem;
+      font-weight: 700;
+
+      text-decoration: none;
+    }
+
+
+    /* =========================================================
+       HERO / PRODUCT DESCRIPTION
+       ========================================================= */
+
+    .hero {
+      padding: 5.3rem 0 5.8rem;
+    }
+
+    .hero-grid {
+      display: grid;
+
+      grid-template-columns:
+        minmax(0, 1.02fr)
+        minmax(0, 0.98fr);
+
+      align-items: center;
+
+      gap: 4rem;
+    }
+
+    .eyebrow {
+      margin: 0 0 0.8rem;
+
+      color: #f5cf76;
+
+      font-size: 0.78rem;
+      font-weight: 850;
+      letter-spacing: 0.16em;
+
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+
+      max-width: 700px;
+
+      font-size:
+        clamp(2.8rem, 7vw, 5.5rem);
+
+      line-height: 0.98;
+
+      letter-spacing: -0.055em;
+    }
+
+    .hero-description {
+      max-width: 640px;
+
+      margin: 1.6rem 0 2rem;
+
+      color: #e7f1eb;
+
+      font-size: 1.08rem;
+    }
+
+    .button {
+      display: inline-flex;
+
+      align-items: center;
+      gap: 0.55rem;
+
+      padding: 0.9rem 1.25rem;
+
+      color: var(--primary);
+
+      background: #ffffff;
+
+      border-radius: 12px;
+
+      font-weight: 800;
+
+      text-decoration: none;
+
+      box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.17);
+
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+
+      box-shadow:
+        0 16px 34px rgba(0, 0, 0, 0.22);
+    }
+
+
+    /* =========================================================
+       PRODUCT IMAGE
+       ========================================================= */
+
+    .product-visual {
+      padding: 1.2rem;
+
+      background:
+        rgba(255, 255, 255, 0.08);
+
+      border:
+        1px solid rgba(255, 255, 255, 0.18);
+
+      border-radius: 30px;
+
+      box-shadow:
+        0 30px 60px rgba(0, 0, 0, 0.23);
+    }
+
+    .product-image {
+      width: 100%;
+
+      aspect-ratio: 4 / 3;
+
+      object-fit: cover;
+
+      border-radius: 20px;
+    }
+
+
+    /* =========================================================
+       MAIN
+       ========================================================= */
+
+    main {
+      padding: 5rem 0;
+    }
+
+    section {
+      margin-bottom: 5rem;
+
+      scroll-margin-top: 2rem;
+    }
+
+    .section-label {
+      margin: 0 0 0.55rem;
+
+      color: var(--primary-light);
+
+      font-size: 0.78rem;
+      font-weight: 850;
+      letter-spacing: 0.14em;
+
+      text-transform: uppercase;
+    }
+
+    h2 {
+      margin: 0 0 0.85rem;
+
+      font-size:
+        clamp(1.8rem, 4vw, 2.6rem);
+
+      line-height: 1.15;
+
+      letter-spacing: -0.025em;
+    }
+
+    .section-intro {
+      max-width: 760px;
+
+      margin: 0 0 2rem;
+
+      color: var(--muted);
+    }
+
+
+    /* =========================================================
+       FEATURES
+       ========================================================= */
+
+    .feature-layout {
+      display: grid;
+
+      grid-template-columns:
+        1.1fr 0.9fr;
+
+      gap: 1.4rem;
+    }
+
+    .card {
+      padding: 1.7rem;
+
+      background: var(--surface);
+
+      border:
+        1px solid var(--border);
+
+      border-radius:
+        var(--radius);
+
+      box-shadow:
+        0 12px 30px rgba(30, 70, 49, 0.06);
+    }
+
+    .features {
+      margin: 0;
+      padding-left: 1.4rem;
+    }
+
+    .features li {
+      margin-bottom: 0.9rem;
+    }
+
+    .features li::marker {
+      color: var(--primary-light);
+    }
+
+    .highlight {
+      color: #ffffff;
+
+      background:
+        linear-gradient(
+          145deg,
+          #174a36,
+          #236b4f
+        );
+    }
+
+    .highlight p {
+      margin-bottom: 0;
+      color: #e8f2ec;
+    }
+
+
+    /* =========================================================
+       PRICING TABLE
+       ========================================================= */
+
+    .table-wrapper {
+      overflow-x: auto;
+
+      background: var(--surface);
+
+      border:
+        1px solid var(--border);
+
+      border-radius:
+        var(--radius);
+
+      box-shadow:
+        0 15px 35px rgba(30, 70, 49, 0.07);
+    }
+
+    table {
+      width: 100%;
+      min-width: 680px;
+
+      border-collapse: collapse;
+    }
+
+    caption {
+      padding: 1.35rem 1.4rem;
+
+      font-size: 1.08rem;
+      font-weight: 800;
+
+      text-align: left;
+    }
+
+    th,
+    td {
+      padding: 1.1rem 1.3rem;
+
+      border-top:
+        1px solid var(--border);
+
+      text-align: left;
+      vertical-align: middle;
+    }
+
+    thead th {
+      background: var(--surface-soft);
+    }
+
+    tbody tr:hover {
+      background: #f8fbf9;
+    }
+
+    .availability {
+      display: inline-block;
+
+      padding: 0.3rem 0.72rem;
+
+      color: #145334;
+
+      background: #e5f6eb;
+
+      border-radius: 999px;
+
+      font-size: 0.86rem;
+      font-weight: 800;
+    }
+
+    .availability-limited {
+      color: #765100;
+      background: #fff2c9;
+    }
+
+
+    /* =========================================================
+       REVIEWS
+       ========================================================= */
+
+    .reviews {
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+      gap: 1rem;
+
+      margin: 0;
+      padding: 0;
+
+      list-style: none;
+    }
+
+    .reviews li {
+      padding: 1.5rem;
+
+      background: var(--surface);
+
+      border:
+        1px solid var(--border);
+
+      border-radius:
+        var(--radius);
+    }
+
+    .review-stars {
+      color: #bd8214;
+
+      letter-spacing: 0.08em;
+    }
+
+    .reviewer {
+      display: block;
+
+      margin-top: 1rem;
+
+      font-weight: 800;
+    }
+
+    .fictional-note {
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+
+    /* =========================================================
+       FOOTER
+       ========================================================= */
+
+    footer {
+      padding: 2.5rem 0;
+
+      color: #d9e7df;
+
+      background: #0e281d;
+
+      text-align: center;
+    }
+
+    footer p {
+      margin: 0.3rem 0;
+    }
+
+
+    /* =========================================================
+       RESPONSIVE PRESENTATION
+       HTML remains the content structure; CSS handles appearance.
+       ========================================================= */
+
+    @media (max-width: 820px) {
+
+      .hero-grid,
+      .feature-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding:
+          4rem 0;
+      }
+
+      .reviews {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 520px) {
+
+      nav {
+        min-height: 68px;
+      }
+
+      main {
+        padding: 3.7rem 0;
+      }
+
+      section {
+        margin-bottom: 4rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+      }
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+<a
+  class="skip-link"
+  href="#main-content"
+>
+  Skip to main content
+</a>
+
+
+<!-- =========================================================
+     TITLE / HEADER
+     ========================================================= -->
+
+<header>
+
+  <div class="container">
+
+    <nav aria-label="Product navigation">
+
+      <p class="brand">
+        AeroCharge
+      </p>
+
+      <a
+        class="nav-link"
+        href="../"
+      >
+        Course Portfolio
+      </a>
+
+    </nav>
+
+  </div>
+
+
+  <div class="hero">
+
+    <div class="container hero-grid">
+
+      <div>
+
+        <p class="eyebrow">
+          Portable sustainable technology
+        </p>
+
+        <h1>
+          AeroCharge One
+        </h1>
+
+
+        <!-- ===================================================
+             PRODUCT DESCRIPTION
+             =================================================== -->
+
+        <p class="hero-description">
+
+          AeroCharge One is a fictional 20,000 mAh
+          solar-assisted portable power bank designed for
+          students, commuters and travellers who need dependable
+          mobile charging away from a conventional wall socket.
+
+        </p>
+
+
+        <!-- ===================================================
+             MORE INFORMATION LINK
+             Opens a genuine second HTML page as required.
+             =================================================== -->
+
+        <a
+          class="button"
+          href="details.html"
+        >
+          More product information
+          <span aria-hidden="true">→</span>
+        </a>
+
+      </div>
+
+
+      <!-- =====================================================
+           PRODUCT IMAGE
+           The SVG is embedded as a data URI so the website does
+           not depend on external copyrighted image assets.
+           ===================================================== -->
+
+      <div class="product-visual">
+
+        <img
+          class="product-image"
+          width="800"
+          height="600"
+          alt="Illustration of the AeroCharge One dark-green portable solar power bank with an integrated solar panel and USB charging ports"
+          src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600' viewBox='0 0 800 600'%3E%3Cdefs%3E%3ClinearGradient id='b' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23e9f3ec'/%3E%3Cstop offset='1' stop-color='%23c9dfd0'/%3E%3C/linearGradient%3E%3ClinearGradient id='p' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23244d3b'/%3E%3Cstop offset='1' stop-color='%23132920'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='800' height='600' rx='36' fill='url(%23b)'/%3E%3Ccircle cx='665' cy='105' r='55' fill='%23e4b346' opacity='.9'/%3E%3Cpath d='M0 465L170 315L290 405L415 260L575 405L700 320L800 405V600H0Z' fill='%23b6d0bd'/%3E%3Cg transform='rotate(-7 400 300)'%3E%3Crect x='205' y='135' width='390' height='315' rx='38' fill='url(%23p)'/%3E%3Crect x='242' y='172' width='316' height='190' rx='18' fill='%232e6a4d'/%3E%3Cg stroke='%2389af9a' stroke-width='5'%3E%3Cpath d='M321 172V362M400 172V362M479 172V362'/%3E%3Cpath d='M242 235H558M242 299H558'/%3E%3C/g%3E%3Crect x='295' y='390' width='75' height='14' rx='7' fill='%23d7e2da'/%3E%3Crect x='395' y='390' width='55' height='14' rx='7' fill='%23d7e2da'/%3E%3Ccircle cx='500' cy='398' r='8' fill='%23e4b346'/%3E%3C/g%3E%3Ctext x='400' y='530' text-anchor='middle' font-family='Arial' font-size='31' font-weight='700' fill='%231a4934'%3EAeroCharge One%3C/text%3E%3C/svg%3E"
+        >
+
+      </div>
+
+    </div>
+
+  </div>
+
+</header>
+
+
+<main
+  id="main-content"
+  class="container"
+>
+
+
+  <!-- =========================================================
+       FEATURES
+       ========================================================= -->
+
+  <section
+    id="features"
+    aria-labelledby="features-title"
+  >
+
+    <p class="section-label">
+      Core capabilities
+    </p>
+
+    <h2 id="features-title">
+      Designed for mobile everyday use
+    </h2>
+
+    <p class="section-intro">
+
+      AeroCharge One combines substantial portable battery
+      capacity with supplementary solar charging and
+      multi-device connectivity.
+
+    </p>
+
+
+    <div class="feature-layout">
+
+      <div class="card">
+
+        <ul class="features">
+
+          <li>
+            <strong>20,000 mAh battery capacity</strong>
+            for multiple compatible device charges.
+          </li>
+
+          <li>
+            <strong>USB-C Power Delivery</strong>
+            for modern phones, tablets and accessories.
+          </li>
+
+          <li>
+            <strong>Solar-assisted top-up charging</strong>
+            for supplementary outdoor energy input.
+          </li>
+
+          <li>
+            <strong>Dual-device charging</strong>
+            using USB-C and USB-A connections.
+          </li>
+
+          <li>
+            <strong>Four-stage battery indicator</strong>
+            for quick charge-level monitoring.
+          </li>
+
+        </ul>
+
+      </div>
+
+
+      <aside class="card highlight">
+
+        <h2>
+          Built around practical mobility
+        </h2>
+
+        <p>
+
+          The solar panel is designed as a supplementary
+          charging source rather than as a replacement for
+          conventional USB-C charging, making the device
+          suitable for travel and emergency top-ups.
+
+        </p>
+
+      </aside>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================================
+       PRICING TABLE
+       ========================================================= -->
+
+  <section
+    id="pricing"
+    aria-labelledby="pricing-title"
+  >
+
+    <p class="section-label">
+      Purchase options
+    </p>
+
+    <h2 id="pricing-title">
+      Pricing and availability
+    </h2>
+
+    <p class="section-intro">
+
+      The fictional product is available in three configurations,
+      demonstrating structured tabular presentation using semantic
+      HTML table elements.
+
+    </p>
+
+
+    <div
+      class="table-wrapper"
+      tabindex="0"
+      role="region"
+      aria-label="Scrollable pricing and availability table"
+    >
+
+      <table>
+
+        <caption>
+          AeroCharge One purchase configurations
+        </caption>
+
+        <thead>
+
+          <tr>
+            <th scope="col">
+              Edition
+            </th>
+
+            <th scope="col">
+              Included items
+            </th>
+
+            <th scope="col">
+              Price
+            </th>
+
+            <th scope="col">
+              Availability
+            </th>
+          </tr>
+
+        </thead>
+
+
+        <tbody>
+
+          <tr>
+
+            <th scope="row">
+              Essential
+            </th>
+
+            <td>
+              Power bank and USB-C cable
+            </td>
+
+            <td>
+              €69.00
+            </td>
+
+            <td>
+              <span class="availability">
+                In stock
+              </span>
+            </td>
+
+          </tr>
+
+
+          <tr>
+
+            <th scope="row">
+              Travel
+            </th>
+
+            <td>
+              Power bank, cable and protective case
+            </td>
+
+            <td>
+              €79.00
+            </td>
+
+            <td>
+              <span class="availability">
+                In stock
+              </span>
+            </td>
+
+          </tr>
+
+
+          <tr>
+
+            <th scope="row">
+              Explorer
+            </th>
+
+            <td>
+              Power bank, case, cable kit and clip mount
+            </td>
+
+            <td>
+              €89.00
+            </td>
+
+            <td>
+              <span
+                class="
+                  availability
+                  availability-limited
+                "
+              >
+                Limited stock
+              </span>
+            </td>
+
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================================
+       REVIEWS
+       ========================================================= -->
+
+  <section
+    id="reviews"
+    aria-labelledby="reviews-title"
+  >
+
+    <p class="section-label">
+      User feedback
+    </p>
+
+    <h2 id="reviews-title">
+      Fictional customer reviews
+    </h2>
+
+    <p class="section-intro">
+
+      The reviews below are fictional and included solely to
+      demonstrate an unordered HTML list containing user feedback.
+
+    </p>
+
+
+    <ul class="reviews">
+
+      <li>
+
+        <span
+          class="review-stars"
+          aria-label="Five out of five stars"
+        >
+          ★★★★★
+        </span>
+
+        <p>
+          “The capacity worked well for a weekend trip and the
+          simple battery indicator made remaining power easy
+          to understand.”
+        </p>
+
+        <span class="reviewer">
+          Maya R.
+        </span>
+
+        <span class="fictional-note">
+          Fictional reviewer
+        </span>
+
+      </li>
+
+
+      <li>
+
+        <span
+          class="review-stars"
+          aria-label="Five out of five stars"
+        >
+          ★★★★★
+        </span>
+
+        <p>
+          “USB-C and USB-A connectivity made it convenient for
+          carrying fewer chargers while commuting between
+          university and work.”
+        </p>
+
+        <span class="reviewer">
+          Daniel K.
+        </span>
+
+        <span class="fictional-note">
+          Fictional reviewer
+        </span>
+
+      </li>
+
+
+      <li>
+
+        <span
+          class="review-stars"
+          aria-label="Four out of five stars"
+        >
+          ★★★★☆
+        </span>
+
+        <p>
+          “The solar panel is useful for supplementary charging,
+          although I still use USB-C when I need to recharge the
+          unit quickly.”
+        </p>
+
+        <span class="reviewer">
+          Lina S.
+        </span>
+
+        <span class="fictional-note">
+          Fictional reviewer
+        </span>
+
+      </li>
+
+    </ul>
+
+  </section>
+
+</main>
+
+
+<footer>
+
+  <div class="container">
+
+    <p>
+      <strong>AeroCharge One</strong>
+    </p>
+
+    <p>
+      Fictional educational website developed for
+      IU DLBCSWAD01 – Web Application Development.
+    </p>
+
+  </div>
+
+</footer>
+
+</body>
+
+</html>
