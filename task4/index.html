@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+
+  <meta
+    name="description"
+    content="Responsive Bootstrap product catalogue for IU DLBCSWAD01 Task 4."
+  >
+
+  <title>NovaTech Essentials | Responsive Product Catalogue</title>
+
+  <!-- Bootstrap 5.3 -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+    crossorigin="anonymous"
+  >
+
+  <style>
+    :root {
+      --bg: #f5f7fb;
+      --surface: #ffffff;
+      --text: #172033;
+      --muted: #667085;
+      --primary: #315ee8;
+      --primary-dark: #183b96;
+      --border: #e3e8f1;
+      --footer: #0d1424;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      overflow-x: hidden;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+
+    a:focus-visible {
+      outline: 3px solid #ffbf32;
+      outline-offset: 4px;
+      border-radius: 6px;
+    }
+
+    .skip-link {
+      position: absolute;
+      top: -100px;
+      left: 1rem;
+      z-index: 9999;
+      padding: 0.8rem 1rem;
+      color: #fff;
+      background: #000;
+      text-decoration: none;
+      border-radius: 8px;
+    }
+
+    .skip-link:focus {
+      top: 1rem;
+    }
+
+    .hero {
+      color: #fff;
+      background:
+        radial-gradient(circle at 82% 18%, rgba(120, 160, 255, 0.33), transparent 28%),
+        radial-gradient(circle at 10% 80%, rgba(171, 113, 255, 0.22), transparent 30%),
+        linear-gradient(135deg, #101a33, #173f94);
+    }
+
+    .navbar-brand {
+      font-weight: 800;
+      letter-spacing: 0.025em;
+    }
+
+    .hero-content {
+      padding: 5rem 0 6rem;
+    }
+
+    .eyebrow {
+      color: #adc7ff;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      max-width: 820px;
+      margin-top: 0.7rem;
+      font-size: clamp(2.7rem, 7vw, 5.3rem);
+      line-height: 1;
+      letter-spacing: -0.05em;
+    }
+
+    .hero-text {
+      max-width: 720px;
+      margin-top: 1.5rem;
+      color: #dfe8ff;
+      font-size: 1.08rem;
+    }
+
+    .catalogue {
+      padding: 5rem 0;
+    }
+
+    .section-label {
+      color: var(--primary);
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .catalogue h2 {
+      margin-top: 0.35rem;
+      font-size: clamp(1.9rem, 4vw, 2.8rem);
+      letter-spacing: -0.03em;
+    }
+
+    .section-description {
+      max-width: 760px;
+      color: var(--muted);
+    }
+
+    .product-card {
+      height: 100%;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      background: var(--surface);
+      box-shadow: 0 16px 42px rgba(35, 52, 96, 0.08);
+      transition: transform 0.22s ease, box-shadow 0.22s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 22px 50px rgba(35, 52, 96, 0.14);
+    }
+
+    .product-image {
+      width: 100%;
+      height: 225px;
+      object-fit: cover;
+      background: #edf2fc;
+    }
+
+    .product-card .card-body {
+      display: flex;
+      flex-direction: column;
+      padding: 1.45rem;
+    }
+
+    .product-description {
+      color: var(--muted);
+    }
+
+    .product-category {
+      margin-top: auto;
+      padding-top: 0.8rem;
+      color: var(--primary-dark);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .implementation-note {
+      margin-top: 4rem;
+      padding: 1.5rem;
+      border-left: 5px solid var(--primary);
+      border-radius: 16px;
+      background: #eaf0ff;
+    }
+
+    code {
+      color: #163d98;
+      font-weight: 700;
+    }
+
+    footer {
+      padding: 2.5rem 0;
+      color: #dde5f3;
+      background: var(--footer);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <a class="skip-link" href="#main-content">
+    Skip to main content
+  </a>
+
+  <header class="hero">
+
+    <nav class="navbar navbar-dark">
+      <div class="container">
+
+        <a class="navbar-brand" href="#">
+          NovaTech Essentials
+        </a>
+
+        <a class="btn btn-light btn-sm fw-bold" href="../">
+          Course Portfolio
+        </a>
+
+      </div>
+    </nav>
+
+    <div class="container hero-content">
+
+      <p class="eyebrow">
+        Responsive Bootstrap Catalogue
+      </p>
+
+      <h1 class="fw-bold">
+        Smart technology for modern everyday life.
+      </h1>
+
+      <p class="hero-text">
+        This fictional product catalogue demonstrates Bootstrap's
+        mobile-first responsive grid using predefined column classes
+        for small, medium and large screen sizes.
+      </p>
+
+    </div>
+
+  </header>
+
+  <main id="main-content">
+
+    <section
+      class="catalogue"
+      aria-labelledby="products-heading"
+    >
+
+      <div class="container">
+
+        <p class="section-label">
+          Product catalogue
+        </p>
+
+        <h2
+          id="products-heading"
+          class="fw-bold"
+        >
+          Explore the NovaTech collection
+        </h2>
+
+        <p class="section-description mb-5">
+          Each product contains a responsive image, title and concise
+          description. Bootstrap automatically changes the number of
+          products displayed per row according to the active breakpoint.
+        </p>
+
+        <!--
+          BOOTSTRAP GRID REQUIREMENT
+
+          12/12 = 1 product per row
+          12/6  = 2 products per row
+          12/4  = 3 products per row
+
+          Every product uses:
+          col-sm-12 col-md-6 col-lg-4
+        -->
+
+        <div class="row g-4">
+
+          <!-- Product 1 -->
+          <div class="col-sm-12 col-md-6 col-lg-4">
+
+            <article class="card product-card">
+
+              <img
+                class="card-img-top img-fluid product-image"
+                width="800"
+                height="500"
+                alt="Illustration of the NovaBook Air lightweight laptop"
+                src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='500'%3E%3Crect width='800' height='500' fill='%23e8efff'/%3E%3Crect x='185' y='75' width='430' height='280' rx='20' fill='%232b4f97'/%3E%3Crect x='215' y='105' width='370' height='220' rx='8' fill='%239ab9f5'/%3E%3Ccircle cx='400' cy='215' r='58' fill='%236e94df'/%3E%3Cpath d='M125 380H675L610 430H190Z' fill='%23959faf'/%3E%3Ctext x='400' y='470' text-anchor='middle' font-family='Arial' font-size='29' font-weight='700' fill='%231b3f8e'%3ENovaBook Air%3C/text%3E%3C/svg%3E"
+              >
+
+              <div class="card-body">
+                <h3 class="h5 fw-bold">
+                  NovaBook Air
+                </h3>
+
+                <p class="product-description">
+                  A fictional lightweight 14-inch laptop designed for
+                  university study, remote work and everyday productivity.
+                </p>
+
+                <p class="product-category mb-0">
+                  Productivity
+                </p>
+              </div>
+
+            </article>
+
+          </div>
+
+          <!-- Product 2 -->
+          <div class="col-sm-12 col-md-6 col-lg-4">
+
+            <article class="card product-card">
+
+              <img
+                class="card-img-top img-fluid product-image"
+                width="800"
+                height="500"
+                alt="Illustration of NovaBuds Pro wireless earbuds and charging case"
+                src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='500'%3E%3Crect width='800' height='500' fill='%23e9f7f2'/%3E%3Crect x='255' y='225' width='290' height='155' rx='70' fill='white' stroke='%2394b9a9' stroke-width='7'/%3E%3Cellipse cx='330' cy='190' rx='48' ry='73' fill='%232b6950'/%3E%3Cellipse cx='470' cy='190' rx='48' ry='73' fill='%232b6950'/%3E%3Crect x='313' y='190' width='34' height='110' rx='17' fill='%232b6950'/%3E%3Crect x='453' y='190' width='34' height='110' rx='17' fill='%232b6950'/%3E%3Ctext x='400' y='450' text-anchor='middle' font-family='Arial' font-size='29' font-weight='700' fill='%232b6950'%3ENovaBuds Pro%3C/text%3E%3C/svg%3E"
+              >
+
+              <div class="card-body">
+                <h3 class="h5 fw-bold">
+                  NovaBuds Pro
+                </h3>
+
+                <p class="product-description">
+                  Fictional wireless earbuds offering compact charging,
+                  touch controls and noise reduction for mobile users.
+                </p>
+
+                <p class="product-category mb-0">
+                  Wireless Audio
+                </p>
+              </div>
+
+            </article>
+
+          </div>
+
+          <!-- Product 3 -->
+          <div class="col-sm-12 col-md-6 col-lg-4">
+
+            <article class="card product-card">
+
+              <img
+                class="card-img-top img-fluid product-image"
+                width="800"
+                height="500"
+                alt="Illustration of the NovaWatch Pulse smartwatch"
+                src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='500'%3E%3Crect width='800' height='500' fill='%23f0ebff'/%3E%3Crect x='350' y='28' width='100' height='420' rx='50' fill='%235c4ca8'/%3E%3Crect x='280' y='125' width='240' height='235' rx='53' fill='%2317202f' stroke='%238f7cdd' stroke-width='9'/%3E%3Ccircle cx='400' cy='242' r='70' fill='%232a354b'/%3E%3Cpath d='M340 245h38l20-48 30 88 21-40h20' fill='none' stroke='%239984ef' stroke-width='9'/%3E%3Ctext x='400' y='480' text-anchor='middle' font-family='Arial' font-size='27' font-weight='700' fill='%234b3b99'%3ENovaWatch Pulse%3C/text%3E%3C/svg%3E"
+              >
+
+              <div class="card-body">
+                <h3 class="h5 fw-bold">
+                  NovaWatch Pulse
+                </h3>
+
+                <p class="product-description">
+                  A fictional smartwatch combining activity tracking,
+                  notifications and configurable wellness reminders.
+                </p>
+
+                <p class="product-category mb-0">
+                  Wearable Technology
+                </p>
+              </div>
+
+            </article>
+
+          </div>
+
+          <!-- Product 4 -->
+          <div class="col-sm-12 col-md-6 col-lg-4">
+
+            <article class="card product-card">
+
+              <img
+                class="card-img-top img-fluid product-image"
+                width="800"
+                height="500"
+                alt="Illustration of the NovaDock Flex USB-C workstation hub"
+                src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='500'%3E%3Crect width='800' height='500' fill='%23fff3e5'/%3E%3Cpath d='M170 210L590 140L638 330L218 405Z' fill='%23464d59'/%3E%3Crect x='275' y='329' width='58' height='15' rx='5' transform='rotate(-10 275 329)' fill='%23f1ba68'/%3E%3Crect x='355' y='315' width='58' height='15' rx='5' transform='rotate(-10 355 315)' fill='%23f1ba68'/%3E%3Crect x='435' y='301' width='58' height='15' rx='5' transform='rotate(-10 435 301)' fill='%23f1ba68'/%3E%3Ctext x='400' y='465' text-anchor='middle' font-family='Arial' font-size='29' font-weight='700' fill='%2363441d'%3ENovaDock Flex%3C/text%3E%3C/svg%3E"
+              >
+
+              <div class="card-body">
+                <h3 class="h5 fw-bold">
+                  NovaDock Flex
+                </h3>
+
+                <p class="product-description">
+                  A fictional USB-C hub providing display, network,
+                  storage and charging connectivity in one compact device.
+                </p>
+
+                <p class="product-category mb-0">
+                  Connectivity
+                </p>
+              </div>
+
+            </article>
+
+          </div>
+
+          <!-- Product 5 -->
+          <div class="col-sm-12 col-md-6 col-lg-4">
+
+            <article class="card product-card">
+
+              <img
+                class="card-img-top img-fluid product-image"
+                width="800"
+                height="500"
+                alt="Illustration of the NovaCam Mini smart indoor camera"
+                src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='500'%3E%3Crect width='800' height='500' fill='%23e9f5fa'/%3E%3Crect x='288' y='85' width='224' height='225' rx='56' fill='white' stroke='%2397c6d7' stroke-width='8'/%3E%3Ccircle cx='400' cy='198' r='68' fill='%23294e60'/%3E%3Ccircle cx='400' cy='198' r='32' fill='%2378cce6'/%3E%3Ccircle cx='424' cy='175' r='10' fill='%23d9f6ff'/%3E%3Crect x='370' y='308' width='60' height='68' rx='13' fill='%237b9ba6'/%3E%3Cellipse cx='400' cy='385' rx='95' ry='24' fill='%235d7d88'/%3E%3Ctext x='400' y='462' text-anchor='middle' font-family='Arial' font-size='29' font-weight='700' fill='%23294e60'%3ENovaCam Mini%3C/text%3E%3C/svg%3E"
+              >
+
+              <div class="card-body">
+                <h3 class="h5 fw-bold">
+                  NovaCam Mini
+                </h3>
+
+                <p class="product-description">
+                  A fictional compact smart camera designed for indoor
+                  monitoring with motion alerts and privacy controls.
+                </p>
+
+                <p class="product-category mb-0">
+                  Smart Home
+                </p>
+              </div>
+
+            </article>
+
+          </div>
+
+          <!-- Product 6 -->
+          <div class="col-sm-12 col-md-6 col-lg-4">
+
+            <article class="card product-card">
+
+              <img
+                class="card-img-top img-fluid product-image"
+                width="800"
+                height="500"
+                alt="Illustration of the NovaCharge 20K portable battery pack"
+                src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='500'%3E%3Crect width='800' height='500' fill='%23edf0f5'/%3E%3Crect x='255' y='60' width='290' height='350' rx='42' fill='%232a313e'/%3E%3Crect x='290' y='100' width='220' height='155' rx='18' fill='%233d485b'/%3E%3Cg fill='%237fa5ff'%3E%3Ccircle cx='335' cy='310' r='11'/%3E%3Ccircle cx='380' cy='310' r='11'/%3E%3Ccircle cx='425' cy='310' r='11'/%3E%3Ccircle cx='470' cy='310' r='11'/%3E%3C/g%3E%3Crect x='325' y='355' width='65' height='14' rx='7' fill='%23b8c3d7'/%3E%3Crect x='410' y='355' width='65' height='14' rx='7' fill='%23b8c3d7'/%3E%3Ctext x='400' y='465' text-anchor='middle' font-family='Arial' font-size='29' font-weight='700' fill='%232a313e'%3ENovaCharge 20K%3C/text%3E%3C/svg%3E"
+              >
+
+              <div class="card-body">
+                <h3 class="h5 fw-bold">
+                  NovaCharge 20K
+                </h3>
+
+                <p class="product-description">
+                  A fictional 20,000 mAh portable battery pack with
+                  USB-C charging and a simple battery-level indicator.
+                </p>
+
+                <p class="product-category mb-0">
+                  Portable Power
+                </p>
+              </div>
+
+            </article>
+
+          </div>
+
+        </div>
+
+        <aside
+          class="implementation-note"
+          aria-labelledby="implementation-heading"
+        >
+
+          <h2
+            id="implementation-heading"
+            class="h5 fw-bold"
+          >
+            Responsive implementation
+          </h2>
+
+          <p class="mb-0">
+            Every product uses
+            <code>col-sm-12 col-md-6 col-lg-4</code>.
+            Bootstrap's twelve-column grid therefore produces
+            12/12 = one product, 12/6 = two products, and
+            12/4 = three products per row.
+          </p>
+
+        </aside>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container text-center">
+
+      <p class="fw-bold mb-1">
+        NovaTech Essentials
+      </p>
+
+      <p class="small mb-0">
+        Fictional responsive product catalogue created for
+        IU DLBCSWAD01 – Web Application Development.
+      </p>
+
+    </div>
+  </footer>
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"
+  ></script>
+
+</body>
+</html>
